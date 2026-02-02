@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Selamat Valentine</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: #ffe6e9;
+        color: #d63384;
+      }
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      button {
+        font-size: 20px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      #agree {
+        background-color: #ff4d6d;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      #disagree {
+        background-color: #ccc;
+        color: #333;
+        position: absolute;
+        transition: transform 0.3s;
+      }
+      #thank-you {
+        font-size: 24px;
+        color: #d63384;
+        margin-top: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Selamat Hari Valentine! ❤️</h1>
+    <p>
+      Cinta adalah bahasa yang mampu berbicara tanpa kata. Semoga hatimu
+      dipenuhi kehangatan dan kebahagiaan.
+    </p>
+    <p>
+      Hari ini bukan hanya tentang hadiah atau coklat, tetapi tentang ketulusan
+      hati. Semoga cinta yang kau beri mendapat balasan yang tulus.
+    </p>
+    <p>Kamu mau ga jadi pacar ku?</p>
+
+    <button id="agree" onclick="showThankYou()">Mau</button>
+    <button id="disagree" onmouseover="moveButton()">Gak mau</button>
+
+    <div id="thank-you" style="display: none">
+      Terima kasih atas persetujuanmu! ❤️ Semoga harimu penuh cinta dan
+      kebahagiaan!
+    </div>
+
+    <audio id="bgm" autoplay loop muted>
+      <source src="blue.mp3" type="audio/mp3" />
+    </audio>
+
+    <script>
+      function showThankYou() {
+        window.location.href = "Yes_page.html";
+      }
+
+      function moveButton() {
+        var button = document.getElementById("disagree");
+        var x = Math.random() * (window.innerWidth - 100);
+        var y = Math.random() * (window.innerHeight - 100);
+        button.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    </script>
+  </body>
+</html>
